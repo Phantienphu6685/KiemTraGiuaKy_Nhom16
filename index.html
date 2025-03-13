@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu Thành viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với website giới thiệu thành viên</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="students/student1.html">Thành viên 1</a></li>
+                <li><a href="students/student2.html">Thành viên 2</a></li>
+                <li><a href="students/student3.html">Thành viên 3</a></li>
+                <li><a href="students/student4.html">Thành viên 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Các thành viên</h2>
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="assets/images/student1.jpg" alt="Thành viên 1">
+                        <div class="caption">Nguyễn Văn A - Chuyên viên phát triển web</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/student2.jpg" alt="Thành viên 2">
+                        <div class="caption">Trần Thị B - Nhà thiết kế đồ họa</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/student3.jpg" alt="Thành viên 3">
+                        <div class="caption">Lê Văn C - Chuyên viên marketing</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/images/student4.jpg" alt="Thành viên 4">
+                        <div class="caption">Phạm Thị D - Quản lý dự án</div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Bản quyền thuộc về nhóm phát triển</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
