@@ -5,18 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu Thành viên</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease; /* Hiệu ứng chuyển động */
+        }
+
+        .slide {
+            min-width: 100%; /* Mỗi slide chiếm toàn bộ chiều rộng */
+            display: none; /* Ẩn tất cả các slide */
+        }
+
+        .slide.active {
+            display: flex; /* Chỉ hiển thị slide hoạt động */
+            flex-direction: column; /* Căn giữa caption */
+            align-items: center; /* Căn giữa nội dung */
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto; /* Giữ tỷ lệ khung hình */
+            max-height: 500px; /* Giới hạn chiều cao tối đa của ảnh */
+            object-fit: cover; /* Đảm bảo ảnh không bị lệch và lấp đầy khung */
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .navigation {
+            margin-top: 20px; /* Khoảng cách giữa ảnh và nút */
+        }
+
+        .prev, .next {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Chào mừng đến với website giới thiệu thành viên</h1>
         <nav>
-            <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="students/student1.html">Thành viên 1</a></li>
-                <li><a href="students/student2.html">Thành viên 2</a></li>
-                <li><a href="students/student3.html">Thành viên 3</a></li>
-                <li><a href="students/student4.html">Thành viên 4</a></li>
-            </ul>
+            
         </nav>
     </header>
     <main>
@@ -24,22 +107,30 @@
             <h2>Các thành viên</h2>
             <div class="slider">
                 <div class="slides">
-                    <div class="slide active">
-                        <img src="assets/images/student1.jpg" alt="Thành viên 1">
-                        <div class="caption">Nguyễn Văn A - Chuyên viên phát triển web</div>
-                    </div>
-                    <div class="slide">
-                        <img src="assets/images/student2.jpg" alt="Thành viên 2">
-                        <div class="caption">Trần Thị B - Nhà thiết kế đồ họa</div>
-                    </div>
-                    <div class="slide">
-                        <img src="assets/images/student3.jpg" alt="Thành viên 3">
-                        <div class="caption">Lê Văn C - Chuyên viên marketing</div>
-                    </div>
-                    <div class="slide">
-                        <img src="assets/images/student4.jpg" alt="Thành viên 4">
-                        <div class="caption">Phạm Thị D - Quản lý dự án</div>
-                    </div>
+                    <a href="students/phantienphu.html">
+                        <div class="slide active">
+                            <img src="assets/images/avatarphu.jpg" alt="Thành viên 1">
+                            <div class="caption">Phan Tiến Phú - Chuyên viên phát triển web</div>
+                        </div>
+                    </a>
+                    <a href="students/nguyentanphong.html">
+                        <div class="slide">
+                            <img src="assets/images/ph.jpg" alt="Thành viên 2">
+                            <div class="caption">Nguyễn Tấn Phong - Nhà thiết kế đồ họa</div>
+                        </div>
+                    </a>
+                    <a href="students/leminhquan.html">
+                        <div class="slide">
+                            <img src="assets/images/Quan1.jpg" alt="Thành viên 3">
+                            <div class="caption">Lê Minh Quân - Chuyên viên marketing</div>
+                        </div>
+                    </a>
+                    <a href="students/phamdovanan.html">
+                        <div class="slide">
+                            <img src="assets/images/an.jpg" alt="Thành viên 4">
+                            <div class="caption">Phạm Đỗ Văn An - Quản lý dự án</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="navigation">
                     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -51,6 +142,30 @@
     <footer>
         <p>&copy; 2025 Bản quyền thuộc về nhóm phát triển</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active'); // Ẩn tất cả các slide
+            });
+            slides[index].classList.add('active'); // Hiển thị slide hiện tại
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1; // Trở về slide cuối cùng
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0; // Trở về slide đầu tiên
+            }
+            showSlide(currentSlide);
+        }
+
+        // Hiển thị slide đầu tiên
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>

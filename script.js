@@ -25,7 +25,7 @@ function changeSlide(direction) {
 // Tự động chuyển slide mỗi 5 giây
 setInterval(() => {
     changeSlide(1);
-}, 5000);
+}, 8000);
 
 // Hiển thị slide đầu tiên
 showSlide(currentSlide);
