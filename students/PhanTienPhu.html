@@ -3,24 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thành viên 1</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Giới thiệu về Bản thân</title>
+    <link rel="stylesheet" href="stylephu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+            border: 3px solid #fff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .content {
+            display: none; /* Ẩn nội dung mặc định */
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 20px;
+            opacity: 0; /* Bắt đầu với độ mờ 0 */
+            transition: opacity 0.5s ease; /* Hiệu ứng chuyển đổi độ mờ */
+        }
+
+        .active {
+            display: block; /* Hiển thị nội dung đang hoạt động */
+            opacity: 1; /* Đặt độ mờ thành 1 */
+        }
+
+        .navigation {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #8f94fb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: #4e54c8; /* Màu cho biểu tượng */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Thông tin Thành viên 1</h1>
+        <h1>Phan Tiến Phú</h1>
+        <img src="/assets/images/avatarphu.jpg" alt="Ảnh đại diện" class="avatar">
+        <div class="intro">
+            <p><strong>Sở thích:</strong> Đọc sách, du lịch, lập trình</p>
+            <p><strong>Định hướng nghề nghiệp:</strong> Chuyên viên phát triển phần mềm</p>
+        </div>
     </header>
     <main>
-        <h2>Nguyễn Văn A</h2>
-        <p><strong>Thông tin cá nhân:</strong> Sinh năm 1995, Hà Nội</p>
-        <p><strong>Quá trình học:</strong> Tốt nghiệp Đại học Bách Khoa Hà Nội.</p>
-        <p><strong>Kỹ năng:</strong> HTML, CSS, JavaScript, React.</p>
-        <p><strong>Dự án:</strong> Trang web giới thiệu sản phẩm, Ứng dụng quản lý công việc.</p>
-        <img src="../assets/images/student1.jpg" alt="Thành viên 1" style="max-width:100%; border-radius:8px;">
+        <div class="content active" id="education">
+            <h2><i class="fas fa-book"></i>Quá trình học tập</h2>
+            <p>Tôi đã học các môn quan trọng như:</p>
+            <ul>
+                <li>Giải tích</li>
+                <li>Cấu trúc dữ liệu và giải thuật</li>
+                <li>Phát triển web</li>
+                <li>Trí tuệ nhân tạo</li>
+            </ul>
+            <p>Đã thực hiện các dự án:</p>
+            <ul>
+                <li>Ứng dụng quản lý thư viện</li>
+                <li>Trang web thương mại điện tử</li>
+            </ul>
+        </div>
+        <div class="content" id="skills">
+            <h2><i class="fas fa-cogs"></i>Kỹ năng đạt được</h2>
+            <ul>
+                <li>Lập trình: JavaScript, Python, Java</li>
+                <li>Thiết kế UI/UX</li>
+                <li>AI/ML: Học máy cơ bản</li>
+            </ul>
+        </div>
+        <div class="content" id="projects">
+            <h2><i class="fas fa-laptop-code"></i>Dự án cá nhân</h2>
+            <p>Tôi đã thực hiện các dự án lớn như:</p>
+            <ul>
+                <li>Hệ thống quản lý sinh viên: Một ứng dụng web để quản lý thông tin sinh viên.</li>
+                <li>Ứng dụng trò chuyện: Ứng dụng chat thời gian thực sử dụng WebSocket.</li>
+            </ul>
+        </div>
+        <div class="content" id="contact">
+            <h2><i class="fas fa-envelope"></i>Liên hệ</h2>
+            <p><strong>Email:</strong> nguyenvana@example.com</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nguyenvana" target="_blank">Nguyễn Văn A</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/nguyenvana" target="_blank">github.com/nguyenvana</a></p>
+            <p><strong>CV:</strong> <a href="assets/documents/cv.pdf" target="_blank">Tải CV</a></p>
+        </div>
+        <div class="navigation">
+            <button onclick="changeContent(-1)">Trước</button>
+            <button onclick="changeContent(1)">Tiếp theo</button>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2025 Bản quyền thuộc về Nguyễn Văn A</p>
+        <p>&copy; 2025 Bản quyền thuộc về Phan Tiến Phú</p>
     </footer>
-    <script src="../script.js"></script>
+    <script>
+        let currentContent = 0; // Chỉ số nội dung hiện tại
+        const contents = document.querySelectorAll('.content'); // Tất cả các nội dung
+
+        function showContent(index) {
+            contents.forEach((content, i) => {
+                content.classList.remove('active'); // Ẩn tất cả các nội dung
+                if (i === index) {
+                    content.classList.add('active'); // Hiển thị nội dung hiện tại
+                }
+            });
+        }
+
+        function changeContent(direction) {
+            contents[currentContent].classList.remove('active'); // Ẩn nội dung hiện tại
+            currentContent += direction; // Thay đổi chỉ số nội dung
+            if (currentContent < 0) {
+                currentContent = contents.length - 1; // Quay lại nội dung cuối cùng nếu chỉ số nhỏ hơn 0
+            } else if (currentContent >= contents.length) {
+                currentContent = 0; // Quay lại nội dung đầu tiên nếu chỉ số vượt quá tổng số nội dung
+            }
+            showContent(currentContent); // Hiển thị nội dung mới
+        }
+
+        // Hiển thị nội dung đầu tiên
+        showContent(currentContent);
+    </script>
 </body>
 </html>
