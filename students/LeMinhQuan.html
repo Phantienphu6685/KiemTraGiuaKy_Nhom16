@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về Bản thân</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+            border: 3px solid #fff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .content {
+            display: none; /* Ẩn nội dung mặc định */
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 20px;
+            opacity: 0; /* Bắt đầu với độ mờ 0 */
+            transition: opacity 0.5s ease; /* Hiệu ứng chuyển đổi độ mờ */
+        }
+
+        .active {
+            display: block; /* Hiển thị nội dung đang hoạt động */
+            opacity: 1; /* Đặt độ mờ thành 1 */
+        }
+
+        .navigation {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #8f94fb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: #4e54c8; /* Màu cho biểu tượng */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lê Minh Quân</h1>
+        <img src="https://scontent.fsgn10-2.fna.fbcdn.net/v/t39.30808-6/472545210_2085221621926119_8182360081391448989_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHXhBJX83a1D31I6ILAkHzzNFstJHCp-TM0Wy0kcKn5M6dz9gLmfDEoMgOy2e9FOkSw71YwImRy_BAq2HVM8xeb&_nc_ohc=ujRmYoZep7IQ7kNvgEAeqE4&_nc_oc=Adgy4SR0V-rmcu09M26udNwcTEr17BEes2px-EX4VDn1ddk3Li8XwrnToVJp4gjEPKcEN65QSpMFOCzJR0jDTjpQ&_nc_zt=23&_nc_ht=scontent.fsgn10-2.fna&_nc_gid=A_Nct0kEFGbcjyOKD_-uj7O&oh=00_AYETqOc6BWqmDwItPYYpkCdnKvU8BB3YTByiCCFGVKnXwA&oe=67D8370D" alt="Ảnh đại diện" class="avatar">
+        <div class="intro">
+            <p><strong>Sở thích:</strong> Đá bóng, đi du lịch, xem phim</p>
+            <p><strong>Định hướng nghề nghiệp:</strong> Chuyên viên phát triển game</p>
+        </div>
+    </header>
+    <main>
+        <div class="content active" id="education">
+            <h2><i class="fas fa-book"></i>Quá trình học tập</h2>
+            <p>Tôi đã hoàn thành các môn học quan trọng và hiện đang chuẩn bị nộp CV đi thực tập.</p>
+            <p>Các môn học đã hoàn thành bao gồm:</p>
+            <ul>
+                <li>Giải tích</li>
+                <li>Cấu trúc dữ liệu và giải thuật</li>
+                <li>Phát triển web</li>
+                <li>Trí tuệ nhân tạo</li>
+            </ul>
+        </div>
+        <div class="content" id="skills">
+            <h2><i class="fas fa-cogs"></i>Kỹ năng đạt được</h2>
+            <ul>
+                <li>Lập trình: JavaScript, Python, Java</li>
+                <li>Thiết kế UI/UX</li>
+                <li>AI/ML: Học máy cơ bản</li>
+            </ul>
+        </div>
+        <div class="content" id="projects">
+            <h2><i class="fas fa-laptop-code"></i>Dự án đã hoàn thành</h2>
+            <p>Tôi đã thực hiện các dự án lớn như:</p>
+            <ul>
+                <li>Đồ án cơ sở: Web bán hàng</li>
+                <li>Đồ án chuyên ngành: Web bán account</li>
+            </ul>
+        </div>
+        <div class="content" id="contact">
+            <h2><i class="fas fa-envelope"></i>Liên hệ</h2>
+            <p><strong>Email:</strong> <a href="mailto:botmi456@gmail.com">botmi456@gmail.com</a></p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/botmi200403" target="_blank">Lê Minh Quân</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/MinhQuan2043" target="_blank">MinhQuan2043</a></p>
+            <p><strong>CV:</strong> <a href="assets/documents/cv.pdf" target="_blank">Tải CV</a></p>
+        </div>
+        <div class="navigation">
+            <button onclick="changeContent(-1)">Trước</button>
+            <button onclick="changeContent(1)">Tiếp theo</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Bản quyền thuộc về Lê Minh Quân</p>
+    </footer>
+    <script>
